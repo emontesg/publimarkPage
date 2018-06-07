@@ -1,0 +1,74 @@
+<div class="contenedor" ng-init="scat=false;sbus=false;">
+  <header class="headerRetadores">
+      <a ng-href="/index"><img class="logoHeader" src="images/logo.png" alt=""></a>
+      <div class="button_container" id="toggle" ng-click="openNav()">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li><a ng-href="/knockouts">KNOCKOUTS</a></li>
+            <li><a ng-href="/nosotros">NOSOTROS</a></li>
+            <li><a ng-href="/retadores">RETADORES</a></li>
+            <li><a ng-href="/tinta">TINTA FRESCA</a></li>
+            <li><a ng-href="/hablemos">HABLEMOS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="flechas">
+      <div class="next"><img src="images/next.png" alt=""></div>
+      <div class="prev"><img src="images/prev.png" alt=""></div>
+      <slick settings="slickRetConfig" class="retadores">
+        <div id="Todos" class="reti" ng-click="getRetadoresByDep('Todos')">Todos</div>
+        <div id="Gerencias" class="reti" ng-click="getRetadoresByDep('Gerencias')">Gerencias</div>
+        <div id="Cuadrilatero" class="reti" ng-click="getRetadoresByDep('Cuadrilatero')">Cuadrilatero</div>
+        <div id="La Wepa" class="reti" ng-click="getRetadoresByDep('La Wepa')">La wepa</div>
+        <div id="Rembrant" class="reti" ng-click="getRetadoresByDep('Rembrandt')">Rembrandt</div>
+        <div id="Big Bang" class="reti" ng-click="getRetadoresByDep('Big Bang')">Big Bang</div>
+        <div id="Submarino" class="reti" ng-click="getRetadoresByDep('Submarino')">Submarino</div>
+        <div id="Produccion" class="reti" ng-click="getRetadoresByDep('Produccion')">Producción</div>
+        <div id="Banco Popular" class="reti" ng-click="getRetadoresByDep('Banco Popular')">Banco Popular</div>
+        <div id="Iniciative" class="reti" ng-click="getRetadoresByDep('Iniciative')">Iniciative</div>
+        <div id="Kolbi" class="reti" ng-click="getRetadoresByDep('Kolbi')">Kolbi</div>
+        <div id="Creatividad" class="reti" ng-click="getRetadoresByDep('Creatividad')">Creatividad</div>
+      </slick>
+    </div>
+    <div class="allRetadores">
+      <div class="retador" ng-repeat="retador in retadores">
+        <img class="retadorImagen" ng-src="{{retador.fields.foto.fields.file.url}}" alt="">
+        <div class="infoRetador">
+          <h3 class="title">{{retador.fields.nombre}}</h3>
+          <h5 class="cat">{{retador.fields.puesto}}</h5>
+          <img src="images/lineaAzulp.png" alt="">
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footers" style="clear:both;">
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+        <div class="infoFooter">
+          <a ng-click="toTop()"><img src="images/volver.png" alt=""></a>
+          <p class="textFooter">
+            Escazú Plaza Tempo <br>
+            Torre A piso 4, <br>
+            San José, <br>
+            Costa Rica <br>
+            <br><br>
+            +506 2228 2038
+          </p>
+        </div>
+        <div class="logos">
+          <div class="refs">
+            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+</div>

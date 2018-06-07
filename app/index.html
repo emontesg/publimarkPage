@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="publimark" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Publimark</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="img/logo.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/iosicon.png">
+
+  <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">-->
+  <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
+
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel='stylesheet' href="bower_components/angular-socialshare/angular-socialshare.min.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!--<link rel="stylesheet" href="pages/home/home.css">-->
+  <!--<link rel="stylesheet" href="pages/missingPerson/missingPerson.css">-->
+  <!--<link rel="stylesheet" href="pages/noticia/noticia.css">-->
+  <!--<link rel="stylesheet" href="pages/categoria/categoria.css">-->
+
+  <!--<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>-->
+<base href="/">
+</head>
+<body>
+
+  <div ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/slick-carousel/slick/slick.js"></script>
+  <script src="bower_components/angular-slick-carousel/dist/angular-slick.min.js"></script>
+
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-contentful/dist/angular-contentful.min.js"></script>
+  <!--<script src="js/jquery.min.js"></script>-->
+  <!--<script src="js/slick.js"></script>-->
+
+  <script src="pages/home/home.js"></script>
+  <script src="pages/knockouts/knockouts.js"></script>
+  <script src="pages/hablemos/hablemos.js"></script>
+  <script src="pages/tinta/tinta.js"></script>
+  <script src="pages/nosotros/nosotros.js"></script>
+  <script src="pages/retadores/retadores.js"></script>
+  <script src="pages/knock/knock.js"></script>
+  <script src="pages/tint/tint.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/slick-carousel/slick/slick.js"></script>
+  <script src="bower_components/angular-slick-carousel/dist/angular-slick.min.js"></script>
+  <script src="bower_components/angular-socialsharing/dist/angular-socialsharing.js"></script>
+  <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
+
+  <!--<script src="js/js.js"></script>-->
+  <script src="app.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108367128-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108367128-1');
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+<div id="fb-root"></div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<div class="contenedor" ng-init="scat=false;sbus=false;">
+<header class="header">
+      <a ng-href="/index"><img class="logoHeader" src="images/logo.png" alt=""></a>
+      <img class="titleHome" src="images/titleHome.png" alt="">
+      <img class="titleHomeRes" src="images/somos-res.png" alt="">
+      <a class="descubri" href=""><img src="images/descubri.png" alt=""></a>
+      <div class="button_container" ng-click="openNav()" id="toggle">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li><a ng-href="/knockouts">KNOCKOUTS</a></li>
+            <li><a ng-href="/nosotros">NOSOTROS</a></li>
+            <li><a ng-href="/retadores">RETADORES</a></li>
+            <li><a ng-href="/tinta">TINTA FRESCA</a></li>
+            <li><a ng-href="/knock">HABLEMOS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="titleHomeKnockout">
+      <h1>KNOCKOUTS RECIENTES</h1>
+      <img src="images/lineaAzul.png" alt="">
+    </div>
+
+    <div class="knockout">
+        <div class="imgKnockout">
+          <img class="homeKnockout" ng-src="{{knockouts[0].fields.tituloImagen.fields.file.url}}" alt="">
+        </div>
+        <div class="knockoutText">
+          <h5 class="cat">{{knockouts[0].fields.categoria}}</h5>
+          <h4 class="title">{{knockouts[0].fields.titulo}}</h4>
+          <h3 class="cliente"><img src="images/medal.png" alt="">Cliente: {{knockouts[0].fields.cliente}}</h3>
+          <a ng-href="/knock/{{knockouts[0].sys.id}}"><h6 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6></a>
+        </div>
+      </div>
+      <div class="knockout">
+        <div class="imgKnockoutMid">
+          <img class="homeKnockout" ng-src="{{knockouts[1].fields.tituloImagen.fields.file.url}}" alt="">
+        </div>
+        <div class="knockoutTextRight">
+          <h5 class="cat">{{knockouts[1].fields.categoria}}</h5>
+          <h4 class="title">{{knockouts[1].fields.titulo}}</h4>
+          <h3 class="cliente"><img src="images/medal.png" alt="">Cliente: {{knockouts[1].fields.cliente}}</h3>
+          <a ng-href="/knock/{{knockouts[1].sys.id}}"><h6 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6></a>
+        </div>
+      </div>
+      <div class="knockout">
+          <div class="imgKnockout">
+            <img class="homeKnockout" ng-src="{{knockouts[2].fields.tituloImagen.fields.file.url}}" alt="">
+          </div>
+          <div class="knockoutText">
+            <h5 class="cat">{{knockouts[2].fields.categoria}}</h5>
+            <h4 class="title">{{knockouts[2].fields.titulo}}</h4>
+            <h3 class="cliente"><img src="images/medal.png" alt="">Cliente: {{knockouts[2].fields.cliente}}</h3>
+            <a ng-href="/knock/{{knockouts[2].sys.id}}"><h6 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6></a>
+          </div>
+        </div>
+    <div class="titleHomeNoticias">
+      <h1>NOTICIAS RECIENTES</h1>
+      <img src="images/lineaAzul.png" alt="">
+    </div>
+    <div class="noticiasHome">
+      <slick settings="slickHomeConfig" ng-if="tendenciaLoaded" class="slideHome">
+        <div class="noticiaHome" ng-repeat="tendencia in tendencias">
+          <h4 class="fechaNoti">{{tendencia.fecha}} <span>{{tendencia.fields.categoria}}</span></h4>
+          <h3 class="titleNoti">{{tendencia.fields.titulo}}</h3>
+          <p class="notiText">{{tendencia.fields.texto}}</p>
+          <a ng-href="/noticia/{{tendendia.sys.id}}"><h5 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5></a>
+        </div>
+      </slick>
+    </div>
+    <footer class="footer">
+      <div class="footers" style="clear:both;">
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+        <div class="infoFooter">
+          <a ng-click="toTop()"><img src="images/volver.png" alt=""></a>
+          <p class="textFooter">
+            Escazú Plaza Tempo <br>
+            Torre A piso 4, <br>
+            San José, <br>
+            Costa Rica <br>
+            <br><br>
+            +506 2228 2038
+          </p>
+        </div>
+        <div class="logos">
+          <div class="refs">
+            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+</div>

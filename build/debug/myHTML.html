@@ -1,0 +1,19 @@
+<div ng-controller="MyController as mainApp">
+    <p>Hello World!</p>
+    {{mainApp.message}}
+    <my-directive></my-directive>
+   
+</div>
+
+<div ng-controller="SpotifyController as spotify" ng-init="spotify.myPublicFunction()">
+	 <md-button class="md-raised md-warn" ng-click="login()">Log in with Spotify</md-button>
+	 <md-button class="md-raised md-warn" ng-click="getUserInfo()">get user info</md-button>
+	 <md-button class="md-raised md-warn" ng-click="getUserTopTracks()">get user top tracks</md-button>
+	 <md-button class="md-raised md-warn" ng-click="addPlaylist()">vale test</md-button>
+
+
+	 <div ng-repeat="cancion in canciones">
+	 	<p>{{$index+1}}{{cancion.name}}</p>
+
+	 </div>
+</div>

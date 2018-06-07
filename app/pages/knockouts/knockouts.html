@@ -1,0 +1,67 @@
+<div class="contenedor"  ng-init="scat=false;sbus=false;">
+  <header class="headerKnock">
+          <a ng-href="/index"><img class="logoHeader" src="images/logo.png" alt=""></a>
+          <div class="button_container" id="toggle" ng-click="openNav()">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
+          <div class="overlay" id="overlay">
+            <nav class="overlay-menu">
+              <ul>
+                <li><a ng-href="/knockouts">KNOCKOUTS</a></li>
+                <li><a ng-href="/nosotros">NOSOTROS</a></li>
+                <li><a ng-href="/retadores">RETADORES</a></li>
+                <li><a ng-href="/tinta">TINTA FRESCA</a></li>
+                <li><a ng-href="/hablemos">HABLEMOS</a></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
+      <select class="knockSelect" name="categoria" ng-model="categoria" ng-change="getKnockoutsByCat(categoria)">
+        <option value="">Todas las Categorias</option>
+        <option value="AudioVisual">Contenido Audiovisual</option>
+        <option value="Audio">Contenido de Audio</option>
+        <option value="Campañas Integrales y de Experiencia">Campañas Intergrales y de Experiencia</option>
+        <option value="Diseño">Diseño</option>
+      </select>
+      <div class="knockUno">
+        <div class="knockoutk" ng-repeat="knockout in knockouts">
+          <img class="knoImg" ng-src="{{knockout.fields.tituloImagen.fields.file.url}}" alt="">
+          <div class="knoText">
+            <div class="kntxt">
+              <h5 class="cat">{{knockout.fields.categoria}}</h5>
+              <h4 class="title">{{knockout.fields.titulo}}</h4>
+              <h3 class="cliente"><img src="images/medal.png" alt="">Cliente: {{knockout.fields.cliente}}</h3>
+              <h6 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footers" style="clear:both;">
+          <div class="logo">
+            <img src="images/logo.png" alt="">
+          </div>
+          <div class="infoFooter">
+            <a ng-click="toTop()"><img src="images/volver.png" alt=""></a>
+            <p class="textFooter">
+              Escazú Plaza Tempo <br>
+              Torre A piso 4, <br>
+              San José, <br>
+              Costa Rica <br>
+              <br><br>
+              +506 2228 2038
+            </p>
+          </div>
+          <div class="logos">
+            <div class="refs">
+              <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+</div>

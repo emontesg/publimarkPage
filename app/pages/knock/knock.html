@@ -1,0 +1,106 @@
+<div class="contenedor" ng-init="scat=false;sbus=false;">
+  <header class="headerKnock">
+      <a ng-href="/index"><img class="logoHeader" src="images/logo.png" alt=""></a>
+      <div class="button_container" id="toggle" ng-click="openNav()">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li><a ng-href="/knockouts">KNOCKOUTS</a></li>
+            <li><a ng-href="/nosotros">NOSOTROS</a></li>
+            <li><a ng-href="/retadores">RETADORES</a></li>
+            <li><a ng-href="/tinta">TINTA FRESCA</a></li>
+            <li><a ng-href="/hablemos">HABLEMOS</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+  <div class="KnockContent">
+    <div class="titleKno">
+      <a href="/knockouts"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>  Volver a Knockouts</a>
+      <h1>{{knockout.titulo}}</h1>
+      <img ng-src="{{knockout.tituloImagen.fields.file.url}}" alt="">
+    </div>
+    <div class="kno-cliente"><img src="images/box1.png" alt="">   Equipo: {{knockout.equipo}}</div>
+    <div class="kno-info">
+      <div class="">Cliente: {{knockout.cliente}}</div>
+      <div class="especial-kno">Categoria: {{knockout.categoria}}</div>
+      <div class="">{{knockout.fecha}}</div>
+    </div>
+    <div class="texto-kno">
+      <div class="texto-title-kno">
+        <h2>EL RETO</h2>
+      </div>
+      <div class="elReto">
+        <p>{{knockout.reto}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="kno-images">
+    <div ng-class="{noshow: (knockout.imagenUno == null)}">
+      <img ng-src="{{knockout.imagenUno.fields.file.url}}" alt="">
+    </div>
+    <div ng-class="{noshow: (knockout.imagenDos == null)}">
+      <img ng-src="{{knockout.imagenDos.fields.file.url}}" alt="">
+    </div>
+  </div>
+  <div class="kno-video">
+    <img src="images/video.png" alt="">
+  </div>
+  <div id="kno-logos" class="logosk">
+    <a href="#"style="color: #fff;background: #000;"><i class="fa fa-share-square-o" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    <a facebook-feed-share data-url='http://google.com' data-shares='shares', data-description="Example text" href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  </div>
+  <div class="knockouts-kno">
+    <div class="knockouts-kno-one">
+      <div class="kno-txt">
+        <h2>{{tendencias[0].fields.titulo}}</h2>
+        <a ng-href="/knock/{{tendencias[0].sys.id}}"><h5 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5></a>
+      </div>
+      <div class="kno-img">
+        <img src="{{tendencias[0].fields.tituloImagen.fields.file.url}}" alt="">
+      </div>
+    </div>
+    <div class="knockouts-kno-two">
+      <div class="kno-img">
+        <img src="{{tendencias[1].fields.tituloImagen.fields.file.url}}" alt="">
+      </div>
+      <div class="kno-txt">
+        <h2>{{tendencias[1].fields.titulo}}</h2>
+        <a ng-href="/knock/{{tendencias[1].sys.id}}"><h5 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5></a>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footers" style="clear:both;">
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+      <div class="infoFooter">
+        <a ng-click="toTop()"><img src="images/volver.png" alt=""></a>
+        <p class="textFooter">
+          Escazú Plaza Tempo <br>
+          Torre A piso 4, <br>
+          San José, <br>
+          Costa Rica <br>
+          <br><br>
+          +506 2228 2038
+        </p>
+      </div>
+      <div class="logos">
+        <div class="refs">
+          <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</div>

@@ -1,0 +1,98 @@
+<div class="contenedor" ng-init="scat=false;sbus=false;">
+  <header class="headerTinta">
+      <a ng-href="/index"><img class="logoHeader" src="images/logo.png" alt=""></a>
+      <div class="button_container" id="toggle" ng-click="openNav()">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li><a ng-href="/knockouts">KNOCKOUTS</a></li>
+            <li><a ng-href="/nosotros">NOSOTROS</a></li>
+            <li><a ng-href="/retadores">RETADORES</a></li>
+            <li><a ng-href="/tinta">TINTA FRESCA</a></li>
+            <li><a ng-href="/hablemos">HABLEMOS</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+  <div class="tintaLeft">
+    <h2 class="title">NOTICIAS RECIENTES</h2>
+    <img src="images/lineaAzul.png" alt="">
+  </div>
+  <div class="tintaRight">
+    <input type="search" ng-model="palabra" ng-keypress="buscarNoticia($event)" name="" placeholder="Buscar">
+    <div class="suscri">Suscribirse</div>
+  </div>
+  <div class="noticiasHome">
+    <slick settings="slickTintaConfig" ng-if="tendenciaLoaded" class="slideHome">
+      <div class="noticiaHome" ng-repeat="tendencia in tendenciasSlide">
+        <h4 class="fechaNoti">{{tendencia.fecha}} <span>{{tendencia.fields.categoria}}</span></h4>
+        <h3 class="titleNoti">{{tendencia.fields.titulo}}</h3>
+        <p class="notiText">{{tendencia.fields.texto}}</p>
+        <a ng-href="/tint/{{tendendia.sys.id}}"><h5 class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5></a>
+      </div>
+    </slick>
+  </div>
+  <div class="tags">
+    <div id="Tendencias" ng-click="getNoticiaByCategoria('Tendencias')" class="tag">Tendencias</div>
+    <div id="Cultura" class="tag" ng-click="getNoticiaByCategoria('Cultura')">Cultura</div>
+    <div id="Diseño" class="tag" ng-click="getNoticiaByCategoria('Diseño')">Diseño</div>
+    <div id="Innovaciones" class="tag" ng-click="getNoticiaByCategoria('Innovaciones')">Innovaciones</div>
+    <div id="Data & Análisis" class="tag" ng-click="getNoticiaByCategoria('Data & Análisis')">Data & Análisis</div>
+    <div id="Ring Mullenlow" class="tag" ng-click="getNoticiaByCategoria('Ring Mullenlow')">Ring Mullenlow</div>
+  </div>
+  <div class="tintaLeft">
+    <h2 style="text-transform:uppercase" class="title">{{categoria}}</h2>
+    <img src="images/lineaAzul.png" alt="">
+  </div>
+  <div class="tinta" ng-repeat="tendencia in tendencias">
+    <div class="imgTinta">
+      <img ng-src="{{tendencia.fields.imagen.fields.file.url}}" alt="">
+    </div>
+    <div class="txtTinta">
+      <div class="fechaTinta">{{tendencia.fecha}}</div>
+      <div class="textTint">
+        <h3 class="title">{{tendencia.fields.titulo}}</h3>
+        <p  id="none-res"  class="cat">
+          {{tendencia.fields.texto}}
+        </p>
+        <a href="/tint/{{tendencia.sys.id}}"><h6 id="vermasTinta" class="verMasHome">Ver más  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6></a>
+        <div class="logosT">
+          <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footers" style="clear:both;">
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+      <div class="infoFooter">
+        <a ng-click="toTop()"><img src="images/volver.png" alt=""></a>
+        <p class="textFooter">
+          Escazú Plaza Tempo <br>
+          Torre A piso 4, <br>
+          San José, <br>
+          Costa Rica <br>
+          <br><br>
+          +506 2228 2038
+        </p>
+      </div>
+      <div class="logos">
+        <div class="refs">
+          <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</div>
